@@ -6,7 +6,7 @@ Game::Game()
     InitWindow(1000, 800, "Arvos");
     SetTargetFPS(60);
 
-    menu.update();
+    //menu.update();
     start();
 }
 
@@ -14,7 +14,7 @@ void Game::start()
 {
     // camera setup
     camera.position = { 20.0f, 20.0f, 20.0f };
-    camera.target = { 0.0f, 0.0f, 0.0f };
+    camera.target = plane.getPlanePos();
     camera.up = { 0.0f, 10.0f, 0.0f };
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -31,6 +31,7 @@ void Game::loadResources()
 void Game::update()
 {
     loadResources();
+    plane.start();
     // main gameloop
     while (!WindowShouldClose())
     {
@@ -42,8 +43,13 @@ void Game::update()
         BeginMode3D(camera);
 
         // draw
-        DrawModel(test, Vector3{ 0.0f, 0.0f, 0.0f }, 1.0f, LIME);
-        DrawGrid(20, 1.0f);
+        DrawSphere(Vector3{0.0f, 0.0f, 0.0f}, 10.0f, BLUE);
+        DrawGrid(80, 1.0f);
+
+        // draw and update plane
+        plane.update(GetFrameTime());
+        camera.position = { plane.getPlanePos().x, plane.getPlanePos().y + 10.0f , plane.getPlanePos().z };
+        camera.target = plane.getPlanePos();
 
         EndMode3D();
 

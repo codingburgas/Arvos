@@ -2,6 +2,7 @@
 #include <iostream>
 #include "raylib.h"
 #include "GameMenu.h"
+#include "Plane.h"
 
 class Game
 {
@@ -9,6 +10,7 @@ class Game
 private:
     // classes
     GameMenu menu;
+    Plane plane;
 
     // camera
     Camera3D camera = { 0 };
@@ -16,7 +18,7 @@ private:
     // resources
     Model test;
 
-    // contructor and deconstructor
+    // constructor and deconstructor
 public:
     Game();
     ~Game();

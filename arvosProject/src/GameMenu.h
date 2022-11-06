@@ -12,7 +12,7 @@ private:
     // resources
 
 
-    // contructor and deconstructor
+    // constructor and deconstructor
 public:
     GameMenu();
     ~GameMenu();
