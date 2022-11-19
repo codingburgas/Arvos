@@ -1,4 +1,4 @@
 ﻿  Plane.cpp
-C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\arvosProject\src\Plane.cpp(28,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\arvosProject\src\Plane.cpp(28,27): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
-  arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\arvosProject\build\x64\Debug\arvosProject.exe
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(28,37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(28,27): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\build\x64\Debug\arvosProject.exe

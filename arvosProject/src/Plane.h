@@ -11,13 +11,13 @@ class Plane
     // variables init
 private:
     Vector3 planePos;
-    float planeSpeed = 10.0f;
+    float planeSpeed = 12.0f;
     float roll = 0.0f;
-    float rotationSpeed = 1.0f;
-    float backRotationSpeed = 0.5f;
+    float rotationSpeed = 1.1f;
+    float backRotationSpeed = 0.6f;
     float yaw = 0.0f;
     float facingAngle = -90.0f; 
-    float turningSpeed = 1.2f;
+    float turningSpeed = 1.3f;
     float pitch = 0.0f;
     // resources
     Model planeModel;

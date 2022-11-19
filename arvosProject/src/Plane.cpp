@@ -25,7 +25,8 @@ void Plane::update(float elapsedTime)
 
 void Plane::move(float elapsedTime)
 {	
-	const float facingRadian = toRadian(static_cast<double>(facingAngle) + 180.0);
+	const float facingRadian = toRadian(static_cast<double>(facingAngle) + 180.0f);
+	if (facingAngle > 360) facingAngle = 0;
 
 	const float XX = planePos.x + planeSpeed * elapsedTime * cos(facingRadian);
 	const float ZZ = planePos.z + planeSpeed * elapsedTime * sin(facingRadian);
