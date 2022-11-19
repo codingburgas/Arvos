@@ -55,10 +55,6 @@ git clone
 ```
 
  ## 🎬 Demo of the project 
-  
-  <p align="center">
-  <img src="" width = "80000px" >
-  </p>
 
 ## 🖥 Team Members
 * **Yordan Stoyanov** - *Scrum trainer* 
