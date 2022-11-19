@@ -14,8 +14,6 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/codingburgas/Arvos?style=flat-square">
     <img src="https://img.shields.io/github/languages/count/codingburgas/Arvos?style=flat-square">
 </p>
-
-## 📋 Description
   
 ## 🚀 Languages 
   <p align="left"> 
@@ -39,11 +37,11 @@
   
 ## 💼 Documents
   - [Doxygen]()
-  - [Documentation]()
-  - [Design documentation]()
-  - [Presentation]()
-  - [QA Unit Testing]()
-  - [QA - Test Plan]()
+  - [Documentation](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/Efi9tvUF7OZFgGGsoymrpZgBlQynONVdDhfGY3iBXVbzsA?e=ERfQ28)
+  - [Design documentation](https://codingburgas-my.sharepoint.com/:t:/g/personal/smtashev20_codingburgas_bg/EQUeYdrCwVNJsuBj6jjTIqUBw3yPMQcu77bByKQdix7X3g?e=WeUhrB)
+  - [Presentation](https://codingburgas-my.sharepoint.com/:p:/g/personal/smtashev20_codingburgas_bg/Edb5JFgja-tBiX3ek73AhCEByeEfcvrf5uIXhqDko9tG0A?e=faZzns)
+  - [QA Unit Testing](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/EQp4jZ_ZL8tOiuNOxEL_Is8BEtGOqQvuJHCiRgqA55F87g?e=us0sC9)
+  - [QA - Test Plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EeEo5Xx6Ld9Gs3NxS6DBHNcBySraO7l_UBNs7xxZTA_SZA?e=wE2lHR)
 
 ## 🔧 Installation
 
@@ -51,10 +49,8 @@
 You can download our project by using the green "Code" button.
 
 Or by pasting the following code in your CMD:
-git clone 
+git clone https://github.com/codingburgas/Arvos.git
 ```
-
- ## 🎬 Demo of the project 
 
 ## 🖥 Team Members
 * **Yordan Stoyanov** - *Scrum trainer* 
