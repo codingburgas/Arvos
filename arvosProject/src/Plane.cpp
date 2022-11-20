@@ -2,7 +2,7 @@
 
 Plane::Plane()
 {
-	planePos = { 0.0f, 66.0f, 0.0f };
+	planePos = { 0.0f, 82.0f, 0.0f };
 }
 
 void Plane::start()
@@ -37,14 +37,14 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 		rotation.z += 1;
 	if (IsKeyDown('D'))
 		rotation.z -= 1;
-	if (IsKeyDown('E') && planeSpeed <= 2.6f)
+	if (IsKeyDown('E') && planeSpeed <= 2.0f)
 	{
-		planeSpeed += 0.1f;
+		planeSpeed += 0.05f;
 		rotationSpeed += 0.2;
 	}
 	else if (IsKeyDown('Q') && planeSpeed > 0.6f)
 	{
-		planeSpeed -= 0.1f;
+		planeSpeed -= 0.025f;
 		rotationSpeed -= 0.2;
 	}
 	else if (planeSpeed < 0.6f)
@@ -53,16 +53,26 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	}
 
 	// going up and down
-	if (IsKeyDown('W') && planePos.y <= 120.0f)
+	if (IsKeyDown('W') && planePos.y <= 150.0f)
 	{
 		planePos.y += 0.5f;
+		if (rotation.y > -25)
+			rotation.y -= rotationSpeed;
+		else rotation.y -= 0.001;
 	}
-	else if (IsKeyDown('S') && planePos.y >= 48.0f)
+	else if (IsKeyDown('S') && planePos.y >= 60.0f)
 	{
 		planePos.y -= 0.5f;
+		if (rotation.y < 25)
+			rotation.y += rotationSpeed;
+		else rotation.y += 0.001;
 	}
 	else
 	{
+		if (rotation.y < 0)
+			rotation.y += 0.5;
+		else if (rotation.y > 0)
+			rotation.y -= 0.5;
 	}
 
 	// handling yaw rotation
