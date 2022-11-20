@@ -36,7 +36,7 @@ void Game::update()
         UpdateCamera(&camera);
 
         BeginDrawing();
-        ClearBackground(SKYBLUE);
+        ClearBackground(WHITE);
         // 3d drawning
         BeginMode3D(camera);
 
@@ -61,7 +61,5 @@ Game::~Game()
 {
     // unloading resources
     UnloadModel(planetMap);
-    UnloadModel(skyModel);
     UnloadTexture(earthMap);
-    UnloadTexture(skyTexture);
 }
