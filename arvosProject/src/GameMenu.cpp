@@ -12,7 +12,6 @@ void GameMenu::start()
 	SetTargetFPS(60);
 
 	background = LoadTexture("../assets/images/mainScreen.png");
-
 	update();
 }
 
@@ -28,13 +27,9 @@ void GameMenu::update()
 		{
 			menuShouldClose = true;
 		}
+		BeginDrawing();
 		ClearBackground(WHITE);
 		DrawTexture(background, 0, 0, WHITE);
-
-
-		BeginDrawing();
-
-
 
 		EndDrawing();
 	}
@@ -42,5 +37,6 @@ void GameMenu::update()
 
 GameMenu::~GameMenu()
 {
-
+	// unloading resources
+	UnloadTexture(background);
 }

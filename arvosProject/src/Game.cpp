@@ -35,14 +35,13 @@ void Game::update()
     {
         UpdateCamera(&camera);
 
-        // start drawing
         BeginDrawing();
         ClearBackground(WHITE);
+        // 3d drawning
         BeginMode3D(camera);
 
-        // draw
         DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 1.0f, BLUE);
-        DrawGrid(80, 1.0f);
+        //DrawGrid(80, 1.0f);
 
         // draw and update plane
         plane.update(GetFrameTime());
