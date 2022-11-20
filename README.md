@@ -44,6 +44,13 @@
   - [QA Unit Testing](https://codingburgas-my.sharepoint.com/:x:/g/personal/smtashev20_codingburgas_bg/EQp4jZ_ZL8tOiuNOxEL_Is8BEtGOqQvuJHCiRgqA55F87g?e=us0sC9)
   - [QA - Test Plan](https://codingburgas-my.sharepoint.com/:w:/g/personal/smtashev20_codingburgas_bg/EeEo5Xx6Ld9Gs3NxS6DBHNcBySraO7l_UBNs7xxZTA_SZA?e=wE2lHR)
 
+ ## 🎬 Demo of the project 
+  
+  <p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1032005436985049150/1044025022416703608/Apple_Pro_Display_XDR_-_Horizontal_1.png" width = "700px" >
+  </p>
+
+
 ## 🔧 Installation
 
 ```
