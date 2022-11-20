@@ -56,14 +56,14 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	if (IsKeyDown('W') && planePos.y <= 150.0f)
 	{
 		planePos.y += 0.5f;
-		if (rotation.y > -25)
+		if (rotation.y > -23)
 			rotation.y -= rotationSpeed;
 		else rotation.y -= 0.001;
 	}
 	else if (IsKeyDown('S') && planePos.y >= 60.0f)
 	{
 		planePos.y -= 0.5f;
-		if (rotation.y < 25)
+		if (rotation.y < 23)
 			rotation.y += rotationSpeed;
 		else rotation.y += 0.001;
 	}

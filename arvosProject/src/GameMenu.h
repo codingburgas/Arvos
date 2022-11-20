@@ -13,6 +13,7 @@ private:
 
     // resources
     Texture2D background;
+    Image logo;
     //Rectangle playButton;
     //Rectangle optionsButton;
     //Rectangle exitButton;
