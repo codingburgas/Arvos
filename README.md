@@ -1,8 +1,8 @@
 <h1 align="center">Arvos</h1>
 
 <p align = "center">
-  <img src="arvosProject/assets/images/logo-dark.png#gh-light-mode-only" height = "300px"/>
-  <img src="arvosProject/assets/images/logo-light.png#gh-dark-mode-only"/>
+  <img src="arvosProject/assets/images/logo-dark.svg#gh-light-mode-only" height = "500px"/>
+  <img src="arvosProject/assets/images/logo-light.svg#gh-dark-mode-only" height = "500px"/>
 </p>
 
 <br>
