@@ -9,8 +9,8 @@ Game::Game()
 void Game::start()
 {
     // camera setup
-    camera.position = { 20.0f, 20.0f, 20.0f };
-    camera.target = plane.getPlanePos();
+    camera.position = { 0.0f, 100.0f, 0.0f };
+    camera.target = { 0.0f, 82.0f, 0.0f };
     camera.up = { 0.0f, 1.0f, 0.0f };
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
@@ -36,7 +36,7 @@ void Game::update()
         UpdateCamera(&camera);
 
         BeginDrawing();
-        ClearBackground(Color{ 215, 226, 243, 255 });
+        ClearBackground(Color{ 215, 226, 245, 255 });
         // 3d drawning
         BeginMode3D(camera);
 
@@ -44,8 +44,10 @@ void Game::update()
 
         // draw and update plane
         plane.update(GetFrameTime());
+
+        // camera update
         camera.target = plane.getPlanePos();
-        camera.position = { plane.getPlanePos().x, plane.getPlanePos().y + 0.4f , plane.getPlanePos().z };
+        camera.position = { plane.getPlanePos().x, plane.getPlanePos().y + 28.0f , plane.getPlanePos().z };
 
         EndMode3D();
 

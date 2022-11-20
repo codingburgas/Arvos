@@ -18,7 +18,7 @@ void Plane::update(float elapsedTime)
 	move(elapsedTime);
 	turn(elapsedTime);
 
-	DrawModel(planeModel, planePos, 1.0f, RAYWHITE);
+	DrawModel(planeModel, planePos, 1.0f, LIGHTGRAY);
 }
 
 void Plane::move(float elapsedTime) // handling the movement/rotation
@@ -40,16 +40,17 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	if (IsKeyDown('E') && planeSpeed <= 2.0f)
 	{
 		planeSpeed += 0.05f;
-		rotationSpeed += 0.2;
+		rotationSpeed += 0.05;
 	}
 	else if (IsKeyDown('Q') && planeSpeed > 0.6f)
 	{
 		planeSpeed -= 0.025f;
-		rotationSpeed -= 0.2;
+		rotationSpeed -= 0.05;
 	}
 	else if (planeSpeed < 0.6f)
 	{
 		planeSpeed = 0.4;
+		rotationSpeed = 1.1f;
 	}
 
 	// going up and down

@@ -16,13 +16,35 @@ void GameMenu::update()
 {
 	while (!menuShouldClose)
 	{
+		mousePos = GetMousePosition();
 		if (WindowShouldClose())
 		{
 			std::exit(0);
 		}
-		if (IsKeyDown(KEY_X))
+		else if (IsKeyDown(KEY_X) && !menuNext)
 		{
-			menuShouldClose = true;
+			menuNext = true;
+			background = LoadTexture("../assets/images/menuScreen.png");
+		}
+		else if (menuNext)
+		{
+			if (CheckCollisionPointRec(mousePos, playButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+			{
+				menuShouldClose = true;
+			}
+			else if (CheckCollisionPointRec(mousePos, infoButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+			{
+				infoMenu = true;
+				background = LoadTexture("../assets/images/menuScreen.png");
+			}
+			else if (CheckCollisionPointRec(mousePos, exitButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+			{
+				std::exit(0);
+			}
+		}
+		else if (infoMenu)
+		{
+
 		}
 		BeginDrawing();
 		ClearBackground(WHITE);
