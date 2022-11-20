@@ -16,7 +16,7 @@ private:
     Camera3D camera = { 0 };
 
     // resources
-    Model test;
+    Model planetMap;
 
     // constructor and deconstructor
 public:

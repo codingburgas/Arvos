@@ -2,11 +2,7 @@
 
 Game::Game()
 {
-    // window setup
-    InitWindow(1000, 800, "Arvos");
-    SetTargetFPS(60);
-
-    //menu.update();
+    menu.start();
     start();
 }
 
@@ -25,7 +21,9 @@ void Game::start()
 
 void Game::loadResources()
 {
-    test = LoadModel("../assets/3dObjects/test.obj");
+    planetMap = LoadModel("../assets/3dObjects/earth.obj");
+    Texture2D earthMap = LoadTexture("../assets/images/earthMap.png");
+    planetMap.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = earthMap;
 }
 
 void Game::update()
@@ -37,14 +35,13 @@ void Game::update()
     {
         UpdateCamera(&camera);
 
-        // start drawing
         BeginDrawing();
         ClearBackground(WHITE);
+        // 3d drawning
         BeginMode3D(camera);
 
-        // draw
-        DrawSphere(Vector3{0.0f, 0.0f, 0.0f}, 10.0f, BLUE);
-        DrawGrid(80, 1.0f);
+        DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 1.0f, BLUE);
+        //DrawGrid(80, 1.0f);
 
         // draw and update plane
         plane.update(GetFrameTime());
@@ -64,5 +61,5 @@ void Game::update()
 Game::~Game()
 {
     // unloading resources
-    UnloadModel(test);
+    UnloadModel(planetMap);
 }

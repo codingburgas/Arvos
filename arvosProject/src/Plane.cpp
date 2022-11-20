@@ -1,10 +1,5 @@
 #include "Plane.h"
 
-double toRadian(double degrees)
-{
-	return (degrees * PI) / 180.0;
-}
-
 Plane::Plane()
 {
 	planePos = { 0.0f, 15.0f, 0.0f };
@@ -17,66 +12,82 @@ void Plane::start()
 
 void Plane::update(float elapsedTime)
 {
+	// plane movement update
 	move(elapsedTime);
 	turn(elapsedTime);
 
 	DrawModel(planeModel, planePos, 1.0f, LIGHTGRAY);
 }
 
-void Plane::move(float elapsedTime)
+void Plane::move(float elapsedTime) // handling the movement/rotation
 {	
-	const float facingRadian = toRadian(static_cast<double>(facingAngle) + 180.0);
+	// calculating the direction
+	direction = { 0, 0, 0 };
+	direction.x = sin(DEG2RAD * rotation.z) * cos(DEG2RAD * -rotation.x);
+	direction.z = cos(DEG2RAD * rotation.z) * cos(DEG2RAD * -rotation.x);
 
-	const float XX = planePos.x + planeSpeed * elapsedTime * cos(facingRadian);
-	const float ZZ = planePos.z + planeSpeed * elapsedTime * sin(facingRadian);
+	// locking the movement forward
+	planePos.x += direction.x * planeSpeed;
+	planePos.z += direction.z * planeSpeed;
 
-	planePos.x = XX;
-	planePos.z = ZZ;
+	// change direction/rotation
+	if (IsKeyDown('A'))
+		rotation.z += 1;
+	if (IsKeyDown('D'))
+		rotation.z -= 1;
+	if (IsKeyDown('E') && planeSpeed <= 1.6f)
+	{
+		planeSpeed += 0.2f;
+		rotationSpeed += 0.2;
+	}
+	else if (IsKeyDown('Q') && planeSpeed > 0.2f)
+	{
+		planeSpeed -= 0.2f;
+		rotationSpeed -= 0.2;
+	}
+	else if (planeSpeed < 0.2)
+	{
+		planeSpeed = 0.2;
+	}
+
+	// handling yaw rotation
+	if (IsKeyDown('D'))
+	{
+		if (rotation.x < 35) 
+			rotation.x += rotationSpeed;
+		else rotation.x += 0.001;
+	}
+	else if (IsKeyDown('A')) 
+	{
+		if (rotation.x > -35) 
+			rotation.x -= rotationSpeed;
+		else  rotation.x -= 0.001;
+	}
+	else
+	{
+		if (rotation.x < 0 )
+			rotation.x += 0.5;
+		else if (rotation.x > 0 )
+			rotation.x -= 0.5;
+	}
 }
 
 void Plane::turn(float elapsedTime)
 {
-	if (IsKeyDown(KEY_A))
-	{
-		if (roll >= -0.7f)
-		{
-			roll -= rotationSpeed * elapsedTime;
-		}
-		else
-		{
-			roll -= 0.0001f * elapsedTime;
-		}
-		facingAngle -= turningSpeed;
-		yaw += turningSpeed * elapsedTime;
-	}
-	else if (IsKeyDown(KEY_D))
-	{
-		if (roll <= 0.7f)
-		{
-			roll += rotationSpeed * elapsedTime;
-		}
-		else
-		{
-			roll += 0.0001f * elapsedTime;
-		}
-		yaw -= turningSpeed * elapsedTime;
-		facingAngle += turningSpeed;
-	}
-	else
-	{
-		if (roll <= 0.0f) roll += backRotationSpeed * elapsedTime;
-		else if (roll >= 0.0f) roll -= backRotationSpeed * elapsedTime;
-	}
-
-	planeModel.transform = MatrixRotateXYZ(Vector3{ pitch , yaw, roll });
+	Matrix transform = MatrixIdentity();
+	transform = MatrixMultiply(transform, MatrixRotateZ(DEG2RAD * rotation.x));
+	transform = MatrixMultiply(transform, MatrixRotateX(DEG2RAD * rotation.y));
+	transform = MatrixMultiply(transform, MatrixRotateY(DEG2RAD * rotation.z));
+	planeModel.transform = transform;
 }
 
-Vector3 Plane::getPlanePos()
+Vector3 Plane::getPlanePos() // returns the plane position vector for outside uses
 {
 	return planePos;
 }
 
 Plane::~Plane()
 {
+	// unloading recources
 	UnloadModel(planeModel);
 }

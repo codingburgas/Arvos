@@ -2,6 +2,17 @@
 
 GameMenu::GameMenu()
 {
+
+}
+
+void GameMenu::start()
+{
+	// window setup
+	InitWindow(windowSize.x, windowSize.y, "Arvos");
+	SetTargetFPS(60);
+
+	background = LoadTexture("../assets/images/mainScreen.png");
+	update();
 }
 
 void GameMenu::update() 
@@ -12,18 +23,20 @@ void GameMenu::update()
 		{
 			std::exit(0);
 		}
-		if (IsKeyDown(KEY_LEFT_SHIFT))
+		if (IsKeyDown(KEY_X))
 		{
 			menuShouldClose = true;
 		}
-		ClearBackground(RAYWHITE);
 		BeginDrawing();
-		DrawText("Menu: Hello :D", (GetScreenWidth() / 2 - 150), (GetScreenHeight() / 2 - 20), 40, GRAY);
+		ClearBackground(WHITE);
+		DrawTexture(background, 0, 0, WHITE);
+
 		EndDrawing();
 	}
 }
 
 GameMenu::~GameMenu()
 {
-
+	// unloading resources
+	UnloadTexture(background);
 }
