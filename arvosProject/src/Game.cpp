@@ -36,7 +36,7 @@ void Game::update()
         UpdateCamera(&camera);
 
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(Color{ 215, 226, 243, 255 });
         // 3d drawning
         BeginMode3D(camera);
 

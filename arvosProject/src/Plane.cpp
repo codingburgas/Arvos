@@ -18,7 +18,7 @@ void Plane::update(float elapsedTime)
 	move(elapsedTime);
 	turn(elapsedTime);
 
-	DrawModel(planeModel, planePos, 1.0f, WHITE);
+	DrawModel(planeModel, planePos, 1.0f, RAYWHITE);
 }
 
 void Plane::move(float elapsedTime) // handling the movement/rotation

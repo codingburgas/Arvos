@@ -17,9 +17,7 @@ private:
 
     // resources
     Model planetMap;
-    Model skyModel;
     Texture2D earthMap;
-    Texture2D skyTexture;
 
     // constructor and deconstructor
 public:
