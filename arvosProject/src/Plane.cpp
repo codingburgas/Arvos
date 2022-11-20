@@ -2,12 +2,14 @@
 
 Plane::Plane()
 {
-	planePos = { 0.0f, 15.0f, 0.0f };
+	planePos = { 0.0f, 66.0f, 0.0f };
 }
 
 void Plane::start()
 {
 	planeModel = LoadModel("../assets/3dObjects/plane.obj");
+	planeTexture = LoadTexture("../assets/images/planeTexture.png");
+	SetMaterialTexture(&planeModel.materials[0], MATERIAL_MAP_DIFFUSE, planeTexture);
 }
 
 void Plane::update(float elapsedTime)
@@ -16,7 +18,7 @@ void Plane::update(float elapsedTime)
 	move(elapsedTime);
 	turn(elapsedTime);
 
-	DrawModel(planeModel, planePos, 1.0f, LIGHTGRAY);
+	DrawModel(planeModel, planePos, 1.0f, WHITE);
 }
 
 void Plane::move(float elapsedTime) // handling the movement/rotation
@@ -35,19 +37,32 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 		rotation.z += 1;
 	if (IsKeyDown('D'))
 		rotation.z -= 1;
-	if (IsKeyDown('E') && planeSpeed <= 1.6f)
+	if (IsKeyDown('E') && planeSpeed <= 2.6f)
 	{
-		planeSpeed += 0.2f;
+		planeSpeed += 0.1f;
 		rotationSpeed += 0.2;
 	}
-	else if (IsKeyDown('Q') && planeSpeed > 0.2f)
+	else if (IsKeyDown('Q') && planeSpeed > 0.6f)
 	{
-		planeSpeed -= 0.2f;
+		planeSpeed -= 0.1f;
 		rotationSpeed -= 0.2;
 	}
-	else if (planeSpeed < 0.2)
+	else if (planeSpeed < 0.6f)
 	{
-		planeSpeed = 0.2;
+		planeSpeed = 0.4;
+	}
+
+	// going up and down
+	if (IsKeyDown('W') && planePos.y <= 120.0f)
+	{
+		planePos.y += 0.5f;
+	}
+	else if (IsKeyDown('S') && planePos.y >= 48.0f)
+	{
+		planePos.y -= 0.5f;
+	}
+	else
+	{
 	}
 
 	// handling yaw rotation

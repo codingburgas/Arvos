@@ -11,7 +11,7 @@ void Game::start()
     // camera setup
     camera.position = { 20.0f, 20.0f, 20.0f };
     camera.target = plane.getPlanePos();
-    camera.up = { 0.0f, 10.0f, 0.0f };
+    camera.up = { 0.0f, 1.0f, 0.0f };
     camera.fovy = 45.0f;
     camera.projection = CAMERA_PERSPECTIVE;
     SetCameraMode(camera, CAMERA_FREE);
@@ -40,13 +40,13 @@ void Game::update()
         // 3d drawning
         BeginMode3D(camera);
 
-        DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 1.0f, BLUE);
+        DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 100.0f, WHITE);
         //DrawGrid(80, 1.0f);
 
         // draw and update plane
         plane.update(GetFrameTime());
-        camera.position = { plane.getPlanePos().x, plane.getPlanePos().y + 10.0f , plane.getPlanePos().z };
         camera.target = plane.getPlanePos();
+        camera.position = { plane.getPlanePos().x, plane.getPlanePos().y + 0.4f , plane.getPlanePos().z };
 
         EndMode3D();
 

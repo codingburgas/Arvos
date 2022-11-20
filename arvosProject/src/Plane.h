@@ -13,13 +13,14 @@ private:
     Vector3 planePos;
     Vector3 direction = {0, 0, 0};
     Vector3 rotation = { 0, 0, 0 };
-    float planeSpeed = 0.2f;
+    float planeSpeed = 0.02f;
     float rotationSpeed = 1.1f;
     float backRotationSpeed = 0.6f;
     float turningSpeed = 1.3f;
 
     // resources
     Model planeModel;
+    Texture2D planeTexture;
 
     // constructor and deconstructor
 public:
