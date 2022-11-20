@@ -35,18 +35,32 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 		rotation.z += 1;
 	if (IsKeyDown('D'))
 		rotation.z -= 1;
+	if (IsKeyDown('E') && planeSpeed <= 1.6f)
+	{
+		planeSpeed += 0.2f;
+		rotationSpeed += 0.2;
+	}
+	else if (IsKeyDown('Q') && planeSpeed > 0.2f)
+	{
+		planeSpeed -= 0.2f;
+		rotationSpeed -= 0.2;
+	}
+	else if (planeSpeed < 0.2)
+	{
+		planeSpeed = 0.2;
+	}
 
 	// handling yaw rotation
 	if (IsKeyDown('D'))
 	{
 		if (rotation.x < 35) 
-			rotation.x += 1;
+			rotation.x += rotationSpeed;
 		else rotation.x += 0.001;
 	}
 	else if (IsKeyDown('A')) 
 	{
 		if (rotation.x > -35) 
-			rotation.x -= 1;
+			rotation.x -= rotationSpeed;
 		else  rotation.x -= 0.001;
 	}
 	else
