@@ -30,6 +30,7 @@ void GameMenu::update()
 		{
 			if (CheckCollisionPointRec(mousePos, playButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 			{
+				background = LoadTexture("../assets/images/loadingScreen.png");
 				menuShouldClose = true;
 			}
 			else if (CheckCollisionPointRec(mousePos, infoButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))

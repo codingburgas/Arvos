@@ -15,9 +15,9 @@ private:
     // resources
     Texture2D background;
     Image logo;
-    Rectangle playButton = { 300.0f, 80.0f, 650.0f, 255.0f };
+    Rectangle playButton = { 282.0f, 70.0f, 659.0f, 280.0f };
     Rectangle infoButton = { 1425.0f, 44.0f, 62.0f, 62.0f };
-    Rectangle exitButton = { 300.0f, 80.0f, 650.0f, 405.0f };
+    Rectangle exitButton = { 300.0f, 71.0f, 659.0f, 404.0f };
 
 
     // constructor and deconstructor
