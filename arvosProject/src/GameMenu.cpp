@@ -1,16 +1,11 @@
 #include "GameMenu.h"
 
-GameMenu::GameMenu()
-{
-
-}
-
 void GameMenu::start()
 {
 	// window setup
 	InitWindow(windowSize.x, windowSize.y, "Arvos");
-	logo = LoadImage("../assets/images/logo.png");
-	SetWindowIcon(logo);
+	logo = LoadImage("../assets/images/logo.png"); 
+	SetWindowIcon(logo); // credits to poka
 	SetTargetFPS(60);
 
 	background = LoadTexture("../assets/images/mainScreen.png");

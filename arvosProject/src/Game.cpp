@@ -22,7 +22,7 @@ void Game::start()
 void Game::loadResources()
 {
     planetMap = LoadModel("../assets/3dObjects/earth.obj");
-    Texture2D earthMap = LoadTexture("../assets/images/earthMap.png");
+    earthMap = LoadTexture("../assets/images/earthMap.png");
     planetMap.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = earthMap;
 }
 
@@ -36,12 +36,11 @@ void Game::update()
         UpdateCamera(&camera);
 
         BeginDrawing();
-        ClearBackground(WHITE);
+        ClearBackground(SKYBLUE);
         // 3d drawning
         BeginMode3D(camera);
 
         DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 100.0f, WHITE);
-        //DrawGrid(80, 1.0f);
 
         // draw and update plane
         plane.update(GetFrameTime());
@@ -62,4 +61,7 @@ Game::~Game()
 {
     // unloading resources
     UnloadModel(planetMap);
+    UnloadModel(skyModel);
+    UnloadTexture(earthMap);
+    UnloadTexture(skyTexture);
 }

@@ -21,7 +21,6 @@ private:
 
     // constructor and deconstructor
 public:
-    GameMenu();
     ~GameMenu();
 
 
