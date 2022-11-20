@@ -1,2 +1,7 @@
 ﻿  Game.cpp
+  Main.cpp
+  Plane.cpp
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(44,27): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(50,28): warning C4305: '-=': truncation from 'double' to 'float'
+  Generating Code...
   arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\build\x64\Debug\arvosProject.exe

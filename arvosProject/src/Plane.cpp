@@ -27,15 +27,35 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	direction.z = cos(DEG2RAD * rotation.z) * cos(DEG2RAD * -rotation.x);
 
 	// locking the movement forward
-	planePos.x += direction.x * 0.2f;
-	planePos.z += direction.z * 0.2f;
+	planePos.x += direction.x * planeSpeed;
+	planePos.z += direction.z * planeSpeed;
 
 	// change direction/rotation
-	if (IsKeyDown('A')) rotation.z += 1;
-	if (IsKeyDown('D')) rotation.z -= 1;
+	if (IsKeyDown('A'))
+		rotation.z += 1;
+	if (IsKeyDown('D'))
+		rotation.z -= 1;
 
-	if (IsKeyDown('W')) rotation.y += 1;
-	if (IsKeyDown('S')) rotation.y -= 1;
+	// handling yaw rotation
+	if (IsKeyDown('D'))
+	{
+		if (rotation.x < 35) 
+			rotation.x += 1;
+		else rotation.x += 0.001;
+	}
+	else if (IsKeyDown('A')) 
+	{
+		if (rotation.x > -35) 
+			rotation.x -= 1;
+		else  rotation.x -= 0.001;
+	}
+	else
+	{
+		if (rotation.x < 0 )
+			rotation.x += 0.5;
+		else if (rotation.x > 0 )
+			rotation.x -= 0.5;
+	}
 }
 
 void Plane::turn(float elapsedTime)
