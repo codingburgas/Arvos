@@ -1,0 +1,9 @@
+﻿  Plane.cpp
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(43,23): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(48,23): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(52,19): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(61,27): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(68,27): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(83,27): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\src\Plane.cpp(89,28): warning C4305: '-=': truncation from 'double' to 'float'
+  arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\build\x64\Debug\arvosProject.exe
