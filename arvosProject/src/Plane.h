@@ -13,7 +13,7 @@ private:
     Vector3 planePos;
     Vector3 direction = {0, 0, 0};
     Vector3 rotation = { 0, 0, 0 };
-    float planeSpeed = 0.02f;
+    float planeSpeed = 0.06f;
     float rotationSpeed = 1.1f;
     float backRotationSpeed = 0.6f;
     float turningSpeed = 1.3f;

@@ -49,8 +49,8 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	}
 	else if (planeSpeed < 0.6f)
 	{
-		planeSpeed = 0.4;
-		rotationSpeed = 1.1f;
+		planeSpeed = 0.6;
+		rotationSpeed = 1.5f;
 	}
 
 	// going up and down
@@ -59,17 +59,19 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 		planePos.y += 0.5f;
 		if (rotation.y > -23)
 			rotation.y -= rotationSpeed;
-		else rotation.y -= 0.001;
+		else rotation.y -= 0;
 	}
 	else if (IsKeyDown('S') && planePos.y >= 60.0f)
 	{
 		planePos.y -= 0.5f;
 		if (rotation.y < 23)
 			rotation.y += rotationSpeed;
-		else rotation.y += 0.001;
+		else rotation.y += 0;
 	}
 	else
 	{
+		if (rotation.y < 0.49 && rotation.y > 0) rotation.y = 0;
+		else if (rotation.y > -0.49 && rotation.y < 0) rotation.y = 0;
 		if (rotation.y < 0)
 			rotation.y += 0.5;
 		else if (rotation.y > 0)
@@ -81,16 +83,18 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	{
 		if (rotation.x < 35) 
 			rotation.x += rotationSpeed;
-		else rotation.x += 0.001;
+		else rotation.x += 0;
 	}
 	else if (IsKeyDown('A')) 
 	{
 		if (rotation.x > -35) 
 			rotation.x -= rotationSpeed;
-		else  rotation.x -= 0.001;
+		else  rotation.x -= 0;
 	}
 	else
 	{
+		if (rotation.x < 0.49 && rotation.x > 0) rotation.x = 0;
+		else if (rotation.x > -0.49 && rotation.x < 0) rotation.x = 0;
 		if (rotation.x < 0 )
 			rotation.x += 0.5;
 		else if (rotation.x > 0 )
