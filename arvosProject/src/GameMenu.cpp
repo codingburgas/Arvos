@@ -80,6 +80,11 @@ void GameMenu::update()
 	}
 }
 
+bool GameMenu::displayFps()
+{
+	return showFps;
+}
+
 GameMenu::~GameMenu()
 {
 	// unloading resources

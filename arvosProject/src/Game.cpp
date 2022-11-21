@@ -52,7 +52,7 @@ void Game::update()
         EndMode3D();
 
         // 2d drawing
-        DrawFPS(10, 10);
+        if(menu.displayFps()) DrawFPS(10, 10);
         EndDrawing();
     }
 

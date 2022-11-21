@@ -32,4 +32,5 @@ public:
 public:
     void start();
     void update();
+    bool displayFps(); // returns showFps
 };
