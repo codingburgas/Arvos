@@ -1,0 +1,5 @@
+﻿  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 26 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\build\Win32\Release\arvosProject.exe

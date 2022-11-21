@@ -36,6 +36,7 @@ void GameMenu::update()
 			else if (CheckCollisionPointRec(mousePos, infoButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 			{
 				infoMenu = true;
+				menuNext = false;
 				background = LoadTexture("../assets/images/menuScreen.png");
 			}
 			else if (CheckCollisionPointRec(mousePos, exitButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))

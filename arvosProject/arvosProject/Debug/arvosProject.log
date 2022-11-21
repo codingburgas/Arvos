@@ -1,3 +1,1 @@
-﻿  Source.cpp
-LINK : fatal error LNK1104: cannot open file 'raylib.lib'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(1074,5): error MSB6006: "link.exe" exited with code 1104.
+﻿  arvosProject.vcxproj -> C:\Users\S\Documents\GitHub\2223-educational-traveling-arvos\ArvosProject\build\Win32\Debug\arvosProject.exe
