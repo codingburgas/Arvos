@@ -34,5 +34,5 @@ public:
     void start();
     void move(float elapsedTime);
     void turn(float elapsedTime);
-    Vector3 getPlanePos();
+    Vector3 getPlanePos(); // returns the plane position vector
 };

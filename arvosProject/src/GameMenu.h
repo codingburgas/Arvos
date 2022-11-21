@@ -13,14 +13,16 @@ private:
     bool infoMenu = false;
     bool showFps = true;
 
-    // resources
-    Texture2D background;
-    Image logo;
+    //shapes
     Rectangle playButton = { 282.0f, 70.0f, 659.0f, 280.0f };
     Rectangle infoButton = { 1425.0f, 44.0f, 62.0f, 62.0f };
     Rectangle exitButton = { 300.0f, 71.0f, 659.0f, 404.0f };
     Rectangle fpsButton = { 289.0f, 153.0f, 45.0f, 25.0f };
     Rectangle backButton = { 115.0f, 40.0f, 36.0f, 46.0f };
+
+    // resources
+    Texture2D background;
+    Image logo;
 
 
     // constructor and deconstructor
@@ -32,5 +34,5 @@ public:
 public:
     void start();
     void update();
-    bool displayFps(); // returns showFps
+    bool displayFps(); // returns whether to show fps or not
 };

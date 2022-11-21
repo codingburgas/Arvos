@@ -42,7 +42,7 @@ void Game::update()
 
         DrawModel(planetMap, Vector3{ 2.0f, 2.0f, 2.0f }, 100.0f, WHITE);
 
-        // draw and update plane
+        // draw and update the plane
         plane.update(GetFrameTime());
 
         // camera update

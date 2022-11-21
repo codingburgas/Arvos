@@ -111,7 +111,7 @@ void Plane::turn(float elapsedTime)
 	planeModel.transform = transform;
 }
 
-Vector3 Plane::getPlanePos() // returns the plane position vector for outside uses
+Vector3 Plane::getPlanePos()
 {
 	return planePos;
 }
@@ -120,4 +120,5 @@ Plane::~Plane()
 {
 	// unloading recources
 	UnloadModel(planeModel);
+	UnloadTexture(planeTexture);
 }

@@ -6,9 +6,11 @@ void GameMenu::start()
 	InitWindow(windowSize.x, windowSize.y, "Arvos");
 	logo = LoadImage("../assets/images/logo.png"); 
 	SetWindowIcon(logo);
-	SetTargetFPS(60);
 
+	SetTargetFPS(60);
 	background = LoadTexture("../assets/images/mainScreen.png");
+
+	UnloadImage(logo);
 	update();
 }
 
