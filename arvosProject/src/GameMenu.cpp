@@ -21,7 +21,7 @@ void GameMenu::update()
 		{
 			std::exit(0);
 		}
-		else if (IsKeyDown(KEY_X) && !menuNext)
+		else if (IsKeyDown(KEY_X) && !menuNext && !infoMenu)
 		{
 			menuNext = true;
 			background = LoadTexture("../assets/images/menuScreen.png");
@@ -37,7 +37,14 @@ void GameMenu::update()
 			{
 				infoMenu = true;
 				menuNext = false;
-				background = LoadTexture("../assets/images/menuScreen.png");
+				if (showFps)
+				{
+					background = LoadTexture("../assets/images/infoScreen1.png");
+				}
+				else
+				{
+					background = LoadTexture("../assets/images/infoScreen0.png");
+				}
 			}
 			else if (CheckCollisionPointRec(mousePos, exitButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
 			{
@@ -46,7 +53,24 @@ void GameMenu::update()
 		}
 		else if (infoMenu)
 		{
-
+			if (CheckCollisionPointRec(mousePos, fpsButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+			{
+				if (showFps)
+				{
+					background = LoadTexture("../assets/images/infoScreen0.png");
+				}
+				else
+				{
+					background = LoadTexture("../assets/images/infoScreen1.png");
+				}
+				showFps = !showFps;
+			}
+			else if (CheckCollisionPointRec(mousePos, backButton) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+			{
+				background = LoadTexture("../assets/images/menuScreen.png");
+				infoMenu = false;
+				menuNext = true;
+			}
 		}
 		BeginDrawing();
 		ClearBackground(WHITE);

@@ -40,16 +40,16 @@ void Plane::move(float elapsedTime) // handling the movement/rotation
 	if (IsKeyDown('E') && planeSpeed <= 2.0f)
 	{
 		planeSpeed += 0.05f;
-		rotationSpeed += 0.05;
+		rotationSpeed += 0.05f;
 	}
 	else if (IsKeyDown('Q') && planeSpeed > 0.6f)
 	{
 		planeSpeed -= 0.025f;
-		rotationSpeed -= 0.05;
+		rotationSpeed -= 0.05f;
 	}
 	else if (planeSpeed < 0.6f)
 	{
-		planeSpeed = 0.6;
+		planeSpeed = 0.6f;
 		rotationSpeed = 1.5f;
 	}
 
